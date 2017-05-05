@@ -45,54 +45,38 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="/container/">Novo</a></li>
-            <li><a href="/container/upload">Upload</a></li>
+            <li> <a href="/">Home</a></li>
+            <li> <a href="/container/">Novo</a></li>
+            <li class="active"><a href="/container/upload">Upload</a></li>
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
-    </nav>
+    </nav>  
 
     <div class="container">
         <br />
-        {% include 'alert.html' %}
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Nome</th>
-                    <th>Status</th>
-                    <th>Ações</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for container in containers %}
-                    <tr>
-                        <td>{{ container.id }}</td>
-                        <td>{{ container.nome }}</td>
-                        <td>{{ container.status }}</td>
-                        <td>
-                            <a href="/container/edit/{{ container.id }}">
-                                <span class="glyphicon glyphicon-edit"
-                                      aria-hidden="true"></span>
-                            </a>
-                            <a href="/container/start/{{ container.id }}">
-                                <span class="glyphicon glyphicon-play"
-                                      aria-hidden="true"></span>
-                            </a>
-                            <a href="/container/stop/{{ container.id }}">
-                                <span class="glyphicon glyphicon-stop"
-                                      aria-hidden="true"></span>
-                            </a>
-                            <a href="/container/delete/{{ container.id }}">
-                                <span class="glyphicon glyphicon-trash"
-                                      aria-hidden="true"></span>
-                            </a>
-                        </td>
-                    </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <form action= "/container/upload" method="post" enctype="mutipart/form-data">
+         <div class="form-group">
+          <label for="arquivo">Container </label>
+          <input type= "file" class= "form-control" name="arquivo" placeholder="File">
+          </div>
+
+         
+
+            
+
+
+
+
+
+          </br>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+ 
+
+        
     </div>
     <!-- /.container -->
 
